@@ -62,11 +62,11 @@ npm install
 
 Create a .env file:
 
-env
-OPENWEATHER_API_KEY=your_openweathermap_api_key
+env:
 
-AUTH0_DOMAIN=your_auth0_domain
-AUTH0_AUDIENCE=your_auth0_api_identifier
+1. OPENWEATHER_API_KEY=your_openweathermap_api_key
+2. AUTH0_DOMAIN=your_auth0_domain
+3. AUTH0_AUDIENCE=your_auth0_api_identifier
 
 
 Start the backend:
@@ -92,10 +92,11 @@ npm install
 
 Create a `.env` file:
 
-env
-VITE_AUTH0_DOMAIN=your_auth0_domain
-VITE_AUTH0_CLIENT_ID=your_auth0_client_id
-VITE_AUTH0_AUDIENCE=your_auth0_api_identifier
+env:
+
+1. VITE_AUTH0_DOMAIN=your_auth0_domain
+2. VITE_AUTH0_CLIENT_ID=your_auth0_client_id
+3. VITE_AUTH0_AUDIENCE=your_auth0_api_identifier
 
 
 Start the frontend:
