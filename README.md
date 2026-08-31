@@ -44,30 +44,6 @@ A full-stack weather analytics application that retrieves weather data from Open
 
 ---
 
-# Project Structure
-
-text
-fidenz-weather/
-│
-├── backend/
-│   ├── cities.json
-│   ├── comfortIndex.js
-│   ├── comfortIndex.test.js
-│   ├── readCities.js
-│   ├── server.js
-│   ├── package.json
-│   └── .env
-│
-├── frontend/
-│   ├── src/
-│   ├── package.json
-│   └── .env
-│
-└── README.md
-
-
----
-
 # Setup Instructions
 
 ## 1. Clone the repository
@@ -101,9 +77,7 @@ node server.js
 
 The backend runs on:
 
-text
 http://localhost:3000
-
 
 ---
 
@@ -132,9 +106,7 @@ npm run dev
 
 The frontend will normally run on:
 
-text
 http://localhost:5173
-
 
 ---
 
@@ -157,7 +129,7 @@ Each parameter is first converted into a score between 0 and 100.
 
 The ideal temperature is defined as 22°C.
 
-text
+
 Temperature Score =
 100 - |Temperature - 22| × 5
 
@@ -170,7 +142,7 @@ Temperature has the largest influence on the final score because it is one of th
 
 The ideal humidity is defined as 50%.
 
-text
+
 Humidity Score =
 100 - |Humidity - 50| × 2
 
@@ -181,7 +153,7 @@ Humidity is given a lower weight because people can still experience comfortable
 
 Lower wind speeds are considered more comfortable for this metric.
 
-text
+
 Wind Score =
 100 - Wind Speed × 15
 
@@ -192,7 +164,7 @@ The score is clamped between 0 and 100.
 
 The metric considers approximately 30% cloudiness to be ideal.
 
-text
+
 Cloud Score =
 100 - |Cloudiness - 30|
 
@@ -203,7 +175,7 @@ Cloud Score =
 
 The individual scores are combined using weighted averaging:
 
-text
+
 Comfort Index =
 Temperature × 0.40
 + Humidity × 0.25
@@ -237,7 +209,7 @@ Raw weather information retrieved from OpenWeatherMap is stored for **5 minutes*
 
 If the raw cache is still valid, the application does not make new OpenWeatherMap requests.
 
-text
+
 Request
    ↓
 Raw cache valid?
@@ -249,7 +221,7 @@ Raw cache valid?
 
 The processed weather data, including Comfort Index scores and rankings, is also cached for 5 minutes.
 
-text
+
 Request
    ↓
 Processed cache valid?
@@ -263,7 +235,7 @@ This prevents unnecessary processing and reduces external API requests.
 
 The application provides:
 
-text
+
 GET /api/cache
 
 
@@ -295,13 +267,13 @@ Authentication is implemented using Auth0.
 
 The weather API endpoint is protected using JWT authentication:
 
-text
+
 GET /api/weather
 
 
 An authenticated access token must be provided in the request:
 
-text
+
 Authorization: Bearer <access-token>
 
 
@@ -372,7 +344,6 @@ npm test
 
 Expected result:
 
-text
 Test Suites: 1 passed, 1 total
 Tests:       7 passed, 7 total
 
@@ -386,7 +357,6 @@ Tests:       7 passed, 7 total
 * The Comfort Index is a custom heuristic and is not intended to represent an official meteorological comfort measurement.
 * The application currently retrieves current weather conditions rather than historical or forecast data.
 * MFA depends on the Auth0 configuration and available verification method.
-
+----
 # Author
-
 Sanjeeban Niranjankumar
