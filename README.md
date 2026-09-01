@@ -316,7 +316,20 @@ The backend validates the token using Auth0 before allowing access to weather da
 
 Public signups are disabled so that users cannot freely create accounts.
 
-MFA was also configured through Auth0 and can be enabled for the application when required.
+# Multi-Factor Authentication
+
+Multi-factor authentication is configured through Auth0 and is required for users when signing in.
+
+The MFA policy is configured as Always, meaning an additional authentication factor is required after the user's primary credentials are successfully authenticated.
+
+The application has the following MFA factors enabled:
+
+One-time Password (OTP) using an authenticator application
+Email verification code
+
+The user initially enrolls an authenticator application by scanning the QR code provided by Auth0. On subsequent logins, the user can authenticate using the enrolled authenticator factor or an available email verification method.
+
+This provides an additional layer of security beyond the user's email address and password.
 
 ---
 
