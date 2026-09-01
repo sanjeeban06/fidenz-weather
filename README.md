@@ -109,6 +109,39 @@ The frontend will normally run on:
 
 http://localhost:5173
 
+Test User
+
+A test user is provided for reviewing the application:
+
+Email: careers@fidenz.com
+Password: Pass#fidenz
+
+The test user is configured in Auth0 and has a verified email address.
+
+Multi-Factor Authentication
+
+MFA is configured with the policy set to:
+
+Always
+
+The following MFA factors are enabled:
+
+One-time Password (OTP) using an authenticator application
+Email verification code
+First login
+
+On the first login, Auth0 may require the user to enroll an authenticator application.
+
+The user will be shown a QR code or setup key.
+
+The user can scan the QR code using an authenticator application such as Google Authenticator or Microsoft Authenticator and enter the generated one-time password.
+
+Subsequent logins
+
+After the initial MFA enrollment, the user will be prompted for an additional authentication factor when logging in.
+
+Depending on the available MFA options, the user can use the enrolled authenticator application or an email verification code.
+
 ---
 
 # Comfort Index
