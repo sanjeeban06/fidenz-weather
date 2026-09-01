@@ -48,14 +48,14 @@ A full-stack weather analytics application that retrieves weather data from Open
 
 ## 1. Clone the repository
 
-bash
-git clone <YOUR-GITHUB-REPOSITORY-URL>
+
+git clone https://github.com/sanjeeban06/fidenz-weather.git
 cd fidenz-weather
 
 
 ## 2. Backend setup
 
-bash
+
 cd backend
 npm install
 
@@ -71,7 +71,6 @@ env:
 
 Start the backend:
 
-bash
 node server.js
 
 
@@ -85,7 +84,7 @@ http://localhost:3000
 
 Open another terminal:
 
-bash
+
 cd frontend
 npm install
 
@@ -101,7 +100,7 @@ env:
 
 Start the frontend:
 
-bash
+
 npm run dev
 
 
@@ -118,29 +117,22 @@ Password: Pass#fidenz
 
 The test user is configured in Auth0 and has a verified email address.
 
-Multi-Factor Authentication
+# Multi-Factor Authentication
 
-MFA is configured with the policy set to:
+Multi-factor authentication is configured through Auth0 and is required for users when signing in.
 
-Always
+The MFA policy is configured as Always, meaning users are required to provide an additional authentication factor after successfully entering their primary credentials.
 
-The following MFA factors are enabled:
+The following MFA factors are enabled in Auth0:
 
 One-time Password (OTP) using an authenticator application
 Email verification code
-First login
 
-On the first login, Auth0 may require the user to enroll an authenticator application.
+The provided Fidenz test account (careers@fidenz.com) has a verified email address and is enrolled in Email MFA.
 
-The user will be shown a QR code or setup key.
+During authentication, Auth0 can require the user to complete the configured MFA challenge using the available enrolled verification method.
 
-The user can scan the QR code using an authenticator application such as Google Authenticator or Microsoft Authenticator and enter the generated one-time password.
-
-Subsequent logins
-
-After the initial MFA enrollment, the user will be prompted for an additional authentication factor when logging in.
-
-Depending on the available MFA options, the user can use the enrolled authenticator application or an email verification code.
+The test account is therefore configured to demonstrate the required email-based MFA flow without requiring the reviewer to create or configure a separate user.
 
 ---
 
@@ -276,21 +268,6 @@ GET /api/cache
 
 This endpoint displays the current status and age of both caches.
 
-Example:
-
-json
-{
-  "rawCache": {
-    "status": "HIT",
-    "ageInSeconds": 42
-  },
-  "processedCache": {
-    "status": "HIT",
-    "ageInSeconds": 15
-  },
-  "cacheDurationSeconds": 300
-}
-
 
 The endpoint was included to make the caching behaviour easier to verify and debug.
 
@@ -383,7 +360,6 @@ Tests cover:
 
 Run the tests from the backend directory:
 
-bash
 npm test
 
 
