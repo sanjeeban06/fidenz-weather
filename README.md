@@ -94,9 +94,9 @@ Create a `.env` file:
 
 env:
 
-1. VITE_AUTH0_DOMAIN=your_auth0_domain
-2. VITE_AUTH0_CLIENT_ID=your_auth0_client_id
-3. VITE_AUTH0_AUDIENCE=your_auth0_api_identifier
+1. VITE_AUTH0_DOMAIN=auth0_domain
+2. VITE_AUTH0_CLIENT_ID=auth0_client_id
+3. VITE_AUTH0_AUDIENCE=auth0_api_identifier
 
 
 Start the frontend:
@@ -178,7 +178,8 @@ The individual scores are combined using weighted averaging:
 
 
 Comfort Index =
-Temperature × 0.40
+
++ Temperature × 0.40
 + Humidity × 0.25
 + Wind × 0.20
 + Cloudiness × 0.15
@@ -317,9 +318,6 @@ Users can filter cities by weather condition, such as:
 * Clear
 * Clouds
 * Rain
-* Drizzle
-* Thunderstorm
-* Snow
 
 ---
 
