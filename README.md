@@ -109,7 +109,7 @@ The frontend will normally run on:
 
 http://localhost:5173
 
-Test User
+## 4. Test User
 
 A test user is provided for reviewing the application:
 
