@@ -271,7 +271,9 @@ The application has the following MFA factors enabled:
 One-time Password (OTP) using an authenticator application
 Email verification code
 
-The user initially enrolls an authenticator application by scanning the QR code provided by Auth0. On subsequent logins, the user can authenticate using the enrolled authenticator factor or an available email verification method.
+The provided Fidenz test account is already enrolled for MFA and has a verified email address.
+
+When signing in, the reviewer will be asked to complete an MFA challenge. They can use the enrolled authenticator application or select "Try another method" to receive a one-time verification code by email.
 
 This provides an additional layer of security beyond the user's email address and password.
 
