@@ -63,11 +63,11 @@ npm install
 
 Create a .env file:
 
-
+```
 1. OPENWEATHER_API_KEY=openweathermap_api_key
 2. AUTH0_DOMAIN=auth0_domain
 3. AUTH0_AUDIENCE=auth0_api_identifier
-
+```
 
 Start the backend:
 
@@ -91,10 +91,11 @@ npm install
 
 Create a `.env` file:
 
+```
 1. VITE_AUTH0_DOMAIN=auth0_domain
 2. VITE_AUTH0_CLIENT_ID=auth0_client_id
 3. VITE_AUTH0_AUDIENCE=auth0_api_identifier
-
+```
 
 Start the frontend:
 
@@ -104,8 +105,9 @@ npm run dev
 
 The frontend will normally run on:
 
+```
 http://localhost:5173
-
+```
 ## 4. Test User
 
 A test user is provided for reviewing the application:
@@ -224,8 +226,9 @@ This reduces the number of requests made to OpenWeatherMap and avoids repeating 
 ## Cache Debug Endpoint
 
 The application provides:
-
+```
 GET /api/cache
+```
 
 It shows the current status and age of the raw and processed caches. This was added to make it easier to check whether the cache is being used during testing.
 
@@ -237,7 +240,9 @@ Authentication is implemented using Auth0.
 
 The weather API endpoint is protected using JWT authentication:
 
+```
 GET /api/weather
+```
 
 An authenticated access token must be provided in the request:
 
@@ -247,7 +252,7 @@ The backend validates the token using Auth0 before allowing access to weather da
 
 Public signups are disabled so that users cannot freely create accounts.
 
-Multi-Factor Authentication
+# Multi-Factor Authentication
 
 Multi-factor authentication is configured through Auth0 and is required for users when signing in.
 
@@ -316,14 +321,15 @@ Tests cover:
 
 Run the tests from the backend directory:
 
+``
 npm test
-
+```
 
 Expected result:
-
+```
 Test Suites: 1 passed, 1 total
 Tests:       7 passed, 7 total
-
+```
 
 ---
 
