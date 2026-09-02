@@ -230,8 +230,6 @@ This is a subjective comfort model rather than a scientific weather standard. Th
 
 The backend uses two separate in-memory caches.
 
-## Raw Weather Cache
-
 The application uses two in-memory caches on the backend: one for the weather data received from OpenWeatherMap and another for the processed results.
 
 The raw weather data is kept in the cache for 5 minutes. When a request is made, the backend first checks whether valid raw data is already available. If it is, the application uses that data instead of making another request to OpenWeatherMap. If the cache has expired, new weather data is requested and stored in the cache.
