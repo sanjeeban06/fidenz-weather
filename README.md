@@ -64,9 +64,9 @@ Create a .env file:
 
 env:
 
-1. OPENWEATHER_API_KEY=your_openweathermap_api_key
-2. AUTH0_DOMAIN=your_auth0_domain
-3. AUTH0_AUDIENCE=your_auth0_api_identifier
+1. OPENWEATHER_API_KEYopenweathermap_api_key
+2. AUTH0_DOMAIN=auth0_domain
+3. AUTH0_AUDIENCE=auth0_api_identifier
 
 
 Start the backend:
@@ -377,7 +377,7 @@ Tests:       7 passed, 7 total
 * The caching implementation is suitable for this assignment but would need a shared cache such as Redis for a multi-instance production deployment.
 * The Comfort Index is a custom heuristic and is not intended to represent an official meteorological comfort measurement.
 * The application currently retrieves current weather conditions rather than historical or forecast data.
-* MFA depends on the Auth0 configuration and available verification method.
+* Authentication and MFA rely on the availability of the configured Auth0 tenant.
 ----
 # Author
 Sanjeeban Niranjankumar
