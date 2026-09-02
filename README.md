@@ -50,6 +50,7 @@ A full-stack weather analytics application that retrieves weather data from Open
 
 
 git clone https://github.com/sanjeeban06/fidenz-weather.git
+
 cd fidenz-weather
 
 
@@ -62,9 +63,8 @@ npm install
 
 Create a .env file:
 
-env:
 
-1. OPENWEATHER_API_KEYopenweathermap_api_key
+1. OPENWEATHER_API_KEY=openweathermap_api_key
 2. AUTH0_DOMAIN=auth0_domain
 3. AUTH0_AUDIENCE=auth0_api_identifier
 
@@ -90,8 +90,6 @@ npm install
 
 
 Create a `.env` file:
-
-env:
 
 1. VITE_AUTH0_DOMAIN=auth0_domain
 2. VITE_AUTH0_CLIENT_ID=auth0_client_id
@@ -215,24 +213,17 @@ This is a subjective comfort model rather than a scientific weather standard. Th
 
 # Caching
 
-The backend uses two separate in-memory caches.
-
 The application uses two in-memory caches on the backend: one for the weather data received from OpenWeatherMap and another for the processed results.
 
 The raw weather data is kept in the cache for 5 minutes. When a request is made, the backend first checks whether valid raw data is already available. If it is, the application uses that data instead of making another request to OpenWeatherMap. If the cache has expired, new weather data is requested and stored in the cache.
 
-The processed weather data, including the Comfort Index scores and city rankings, is also cached for 5 minutes. This means that if the processed results are still available in the cache, the backend can return them directly without processing the weather data again.
+The processed weather data, including the Comfort Index scores and city rankings, is also cached for 5 minutes. If the processed results are still available in the cache, the backend can return them directly without processing the weather data again.
 
 This reduces the number of requests made to OpenWeatherMap and avoids repeating the same processing for every request.
 
 ## Cache Debug Endpoint
 
 The application provides:
-
-
-GET /api/cache
-
-The application provides the following endpoint:
 
 GET /api/cache
 
@@ -246,21 +237,17 @@ Authentication is implemented using Auth0.
 
 The weather API endpoint is protected using JWT authentication:
 
-
 GET /api/weather
-
 
 An authenticated access token must be provided in the request:
 
-
 Authorization: Bearer <access-token>
-
 
 The backend validates the token using Auth0 before allowing access to weather data.
 
 Public signups are disabled so that users cannot freely create accounts.
 
-# Multi-Factor Authentication
+Multi-Factor Authentication
 
 Multi-factor authentication is configured through Auth0 and is required for users when signing in.
 
