@@ -48,18 +48,20 @@ A full-stack weather analytics application that retrieves weather data from Open
 
 ## 1. Clone the repository
 
-
+```
 git clone https://github.com/sanjeeban06/fidenz-weather.git
+```
 
+```
 cd fidenz-weather
-
+```
 
 ## 2. Backend setup
 
-
+```
 cd backend
 npm install
-
+```
 
 Create a .env file:
 
@@ -71,23 +73,25 @@ Create a .env file:
 
 Start the backend:
 
+```
 node server.js
-
+```
 
 The backend runs on:
 
+```
 http://localhost:3000
-
+```
 ---
 
 ## 3. Frontend setup
 
 Open another terminal:
 
-
+```
 cd frontend
 npm install
-
+```
 
 Create a `.env` file:
 
@@ -99,15 +103,16 @@ Create a `.env` file:
 
 Start the frontend:
 
-
+```
 npm run dev
-
+```
 
 The frontend will normally run on:
 
 ```
 http://localhost:5173
 ```
+
 ## 4. Test User
 
 A test user is provided for reviewing the application:
