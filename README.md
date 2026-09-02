@@ -321,7 +321,7 @@ Tests cover:
 
 Run the tests from the backend directory:
 
-``
+```
 npm test
 ```
 
