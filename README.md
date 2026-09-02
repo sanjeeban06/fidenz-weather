@@ -115,24 +115,11 @@ A test user is provided for reviewing the application:
 Email: careers@fidenz.com
 Password: Pass#fidenz
 
-The test user is configured in Auth0 and has a verified email address.
+The test account has been configured in Auth0 with a verified email address and MFA already enrolled.
 
-# Multi-Factor Authentication
+When signing in, Auth0 will request an MFA verification code. The reviewer can either use the enrolled authenticator application or select "Try another method" and receive a one-time verification code by email.
 
-Multi-factor authentication is configured through Auth0 and is required for users when signing in.
-
-The MFA policy is configured as Always, meaning users are required to provide an additional authentication factor after successfully entering their primary credentials.
-
-The following MFA factors are enabled in Auth0:
-
-One-time Password (OTP) using an authenticator application
-Email verification code
-
-The provided Fidenz test account (careers@fidenz.com) has a verified email address and is enrolled in Email MFA.
-
-During authentication, Auth0 can require the user to complete the configured MFA challenge using the available enrolled verification method.
-
-The test account is therefore configured to demonstrate the required email-based MFA flow without requiring the reviewer to create or configure a separate user.
+The email MFA option is available because the test account's email address has been verified in Auth0.
 
 ---
 
