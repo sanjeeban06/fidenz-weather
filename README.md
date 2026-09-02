@@ -232,31 +232,13 @@ The backend uses two separate in-memory caches.
 
 ## Raw Weather Cache
 
-Raw weather information retrieved from OpenWeatherMap is stored for **5 minutes**.
+The application uses two in-memory caches on the backend: one for the weather data received from OpenWeatherMap and another for the processed results.
 
-If the raw cache is still valid, the application does not make new OpenWeatherMap requests.
+The raw weather data is kept in the cache for 5 minutes. When a request is made, the backend first checks whether valid raw data is already available. If it is, the application uses that data instead of making another request to OpenWeatherMap. If the cache has expired, new weather data is requested and stored in the cache.
 
+The processed weather data, including the Comfort Index scores and city rankings, is also cached for 5 minutes. This means that if the processed results are still available in the cache, the backend can return them directly without processing the weather data again.
 
-Request
-   ↓
-Raw cache valid?
-   ├── Yes → use cached raw data
-   └── No → request OpenWeatherMap
-
-
-## Processed Weather Cache
-
-The processed weather data, including Comfort Index scores and rankings, is also cached for 5 minutes.
-
-
-Request
-   ↓
-Processed cache valid?
-   ├── Yes → return processed data
-   └── No → process raw data
-
-
-This prevents unnecessary processing and reduces external API requests.
+This reduces the number of requests made to OpenWeatherMap and avoids repeating the same processing for every request.
 
 ## Cache Debug Endpoint
 
@@ -265,11 +247,11 @@ The application provides:
 
 GET /api/cache
 
+The application provides the following endpoint:
 
-This endpoint displays the current status and age of both caches.
+GET /api/cache
 
-
-The endpoint was included to make the caching behaviour easier to verify and debug.
+It shows the current status and age of the raw and processed caches. This was added to make it easier to check whether the cache is being used during testing.
 
 ---
 
